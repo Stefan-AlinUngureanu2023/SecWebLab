@@ -1,0 +1,21 @@
+<form method="post">
+  <input type="text" name="search" required>
+  <input type="submit" value="Search">
+</form>
+
+
+<!-- (B) OUTPUT SEARCH RESULTS -->
+{% if usr | length != 0 %}
+<table id="demo">
+  {% for u in usr %}
+  <tr>
+    <td>{{ u[0] }}</td>
+    <td>{{ u[1] }}</td>
+    <td>{{ u[2] }}</td>
+  </tr>
+    {% endfor %}
+
+</table>
+{% else %}
+<div id="dem0">No search results.</div>
+{% endif %}

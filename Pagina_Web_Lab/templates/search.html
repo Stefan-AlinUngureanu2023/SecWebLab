@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% autoescape false %}
+<html>
+  <body>
+
+    <!-- Search form -->
+    <form method="GET">
+      <input type="text" name="q"
+             autocomplete="off" />
+      <input type="submit" value="Search users" />
+    </form>
+
+    <!-- Comments -->
+    {% if not search_query %}
+      <h3>Users:</h3>
+    {% else %}
+      <h3>"{{ search_query }}":</h3>
+    {% endif %}
+
+    {% for user in users %}
+      <div>
+        <p>{{ user[0] }} {{ user[1] }}</p>
+      </div>
+    {% endfor %}
+
+
+  </body>
+</html>
+{% endautoescape %}

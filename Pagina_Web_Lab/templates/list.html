@@ -1,0 +1,26 @@
+<!doctype html>
+{% autoescape false %}
+<html>
+   <body>
+      <table border = 1>
+         <thead>
+            <td>Username</td>
+            <td>Nume</td>
+            <td>Prenume</td>
+            <td>Personal_URL</td>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["alias"]}}</td>
+               <td>{{row["nume"]}}</td>
+               <td> {{ row["prenume"]}}</td>
+               <td>{{row['url_site']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>
+{% endautoescape %}

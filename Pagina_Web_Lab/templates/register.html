@@ -1,0 +1,35 @@
+<html>
+   <body>
+      <form action = "{{ url_for('addRecord') }}" method = "POST" enctype=multipart/form-data>
+         <h3>Please fill the form</h3>
+         Username
+         <input type = "text" name = "username" pattern="^(?![0-9])[\w\d_]{8,30}$"/><br>
+
+         Email
+         <input type = "email" name = "email" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$"/><br>
+
+         Password
+         <input type = "password" name = "password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{12,64}$"/><br>
+
+         Confirm_Password
+         <input type = "password" name = "confirm_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{12,64}$"/><br>
+
+         Nume
+         <input type = "text" name = "nume" pattern="\b([A-Z][a-z\. -]+[ ]*)+"/><br>
+
+         Prenume
+         <input type = "text" name = "prenume" pattern="\b([A-Z][a-z\. -]+[ ]*)+"/><br>
+
+         Nume_afisat
+         <input type = "text" name = "alias"/><br>
+
+         Url_Site
+         <input type = "url" name="url_site" pattern="^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$"/><br>
+
+         <input type=file name=file pattern="^[a-zA-Z0-9_-]+\.(jpg|jpeg|png|gif|bmp)$">
+
+         <input type = "submit" value = "submit" /><br>
+
+      </form>
+   </body>
+</html>

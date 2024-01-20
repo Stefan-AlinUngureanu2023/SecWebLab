@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Flask!</h1>
+      <br>
+      <p>Click <a href="/">here</a> to go home.</p>
+    </div>
+    <div id="create_cookie">
+      <h3>Create dummy cookie</h3>>
+        <button type="button" onclick="setCookie()">Generate Cookie</button>
+        <script>
+
+          function setCookie()
+          {
+            var now = new Date();
+            var time = now.getTime() + (2 * 24 * 3600 * 1000);
+            var newTime = new Date(now.setTime(time));
+
+            newTime = newTime.toUTCString();
+
+            document.cookie = "cookie=dummy; expires=" + newTime + "; path=/";
+          }
+
+        </script>
+
+    </div>
+
+    <div>
+
+      <form id="bar" method="post" action="http://127.0.0.1:5650/foo">
+      <label for="Cookie">Send cookies</label><br>
+      <input id="Cookie" type="submit" formtarget="_blank"/>
+      </form>
+       <script type="text/javascript">
+        document.getElementById('Cookie').value = document.cookie;
+      </script>
+    </div>
+  </body>
+</html>
